@@ -89,7 +89,6 @@ class StatsController extends AbstractController implements StatsControllerInter
         $response = $this->responseToArray($this->client->get($uri));
 
         if ($this->isHybrid()) {
-
             if (isset($response['Response']['TimeUnit'])) {
                 $response['Response']['TimeUnit'] = array_map('intval', $response['Response']['TimeUnit']);
             }
